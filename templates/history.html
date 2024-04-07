@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Roll History</title>
+</head>
+<body>
+    <h1>Roll History</h1>
+    <ul>
+        {% for roll in rolls %}
+            <li>{{ roll }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('home') }}">Home</a>
+</body>
+</html>

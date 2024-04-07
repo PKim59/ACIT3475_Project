@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customize Dice</title>
+</head>
+<body>
+    <h1>Customize Dice</h1>
+    <p>Enter the number of sides for your custom dice.</p>
+    <form method="POST">
+        <input type="number" name="sides" min="1">
+        <input type="submit" value="Create">
+    </form>
+    <a href="{{ url_for('home') }}">Home</a>
+</body>
+</html>
