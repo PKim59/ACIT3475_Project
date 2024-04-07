@@ -2,15 +2,21 @@ from flask import Flask, request, jsonify, render_template, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import random
+import mysql.connector
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://username:password@localhost/dbname'
+# Update the SQLALCHEMY_DATABASE_URI with your MySQL connection details
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://username:password@localhost/dbname'
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 class Roll(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     rolls = db.Column(db.String(120), nullable=False)
+
+@app.before_first_request
+def create_tables():
+    db.create_all()
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
