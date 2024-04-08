@@ -2,13 +2,34 @@
 <html>
 <head>
     <title>Dice Rolling</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        form, ul {
+            margin: auto;
+            display: inline-block;
+            text-align: left;
+        }
+        ul {
+            list-style-type: none;  /* Remove bullet points */
+            padding-left: 0;        /* Remove default padding */
+        }
+    </style>
 </head>
 <body>
     <h1>Welcome to the Dice Rolling Website</h1>
     <p>Enter the type and number of dice to roll in the format NdS, where N is the number of dice and S is the number of sides.</p>
     <form method="POST">
-        <input type="text" name="dice" placeholder="NdS">
-        <input type="submit" value="Roll">
+        <input type="text" name="dice" placeholder="Enter dice (e.g., 2d6)" required>
+        <input type="number" name="modifier" placeholder="Modifier">
+        <button type="submit">Roll</button>
     </form>
+    <h2>Your Rolls:</h2>
+    <ul>
+    {% for roll in rolls %}
+        <li>{{ roll.rolls }} with modifier {{ roll.modifier }} = {{ roll.total }}</li>
+    {% endfor %}
+    </ul>
 </body>
 </html>

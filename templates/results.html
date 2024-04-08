@@ -2,10 +2,32 @@
 <html>
 <head>
     <title>Roll Results</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        form, ul {
+            margin: auto;
+            display: inline-block;
+            text-align: left;
+        }
+        ul {
+            list-style-type: none;  /* Remove bullet points */
+            padding-left: 0;        /* Remove default padding */
+        }
+    </style>
 </head>
-<body>
     <h1>Roll Results</h1>
-    <p>{{ rolls }}</p>
-    <a href="{{ url_for('home') }}">Roll again</a>
+    <h2>Individual Rolls:</h2>
+    <ul>
+    {% for roll in rolls %}
+        <li>{{ roll }}</li>
+    {% endfor %}
+    </ul>
+    <h2>Modifier:</h2>
+    <p>{{ modifier }}</p>
+    <h2>Total Result:</h2>
+    <p>{{ total }}</p>
+    <a href="/">Go Back</a>
 </body>
 </html>
