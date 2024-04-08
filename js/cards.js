@@ -25,19 +25,24 @@ function displayCardButtons() {
     var cardButtonsDiv = document.getElementById("cardButtons");
     for (var i = 0; i < 5; i++) {
         var button = document.createElement("button");
-        button.textContent = "Pick Card " + (i + 1);
-        button.setAttribute("onclick", "pickCard(" + i + ")");
+        button.innerHTML = "<img src='../images/card/red_joker.png' onclick='pickCard(" + i + ")' />";
         cardButtonsDiv.appendChild(button);
     }
 }
 
 // Function to pick a card
 function pickCard(index) {
-    var selectedCardsDiv = document.getElementById("selectedCards");
+    var cardButtons = document.getElementById("cardButtons").getElementsByTagName("button");
     var card = shuffledDeck[index];
-    var cardDisplay = document.createElement("p");
-    cardDisplay.textContent = "Card " + (index + 1) + ": " + card;
-    selectedCardsDiv.appendChild(cardDisplay);
+    cardButtons[index].innerHTML = "<img src='../images/card/" + card.toLowerCase().replace(/ /g, "_") + ".png' />";
+}
+
+// Function to reset the game and reshuffle the hand
+function reset() {
+    var cardButtonsDiv = document.getElementById("cardButtons");
+    cardButtonsDiv.innerHTML = ''; // Clear card buttons
+    shuffledDeck = shuffle(deck); // Reshuffle deck
+    displayCardButtons(); // Display new set of card buttons
 }
 
 // Display card buttons when the page loads

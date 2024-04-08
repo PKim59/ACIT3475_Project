@@ -4,15 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pick a Card</title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/cards.css">
 </head>
 <body>
-    <h1>Pick 5 Cards</h1>
+    <h1>Pick a Card</h1>
+    <div class="navbar">
+        <ul>
+            <li><a href="../index.html">Return to Main Menu</a></li>
+            <li><a href="./d20.html">D20</a></li>
+            <li><a href="./cards.html">Pick a Card</a></li>
+            <li><a href="./dice.html">Dice Roller</a></li>
+            <li><a href="./flip.html">Flip a Coin</a></li>
+            <li><a href="./rps.html">Rock Paper Scissors</a></li>
+            <li><a href="./wheel.html">Spin the Wheel</a></li>
+        </ul>
+    </div>
     <div id="cardButtons">
         <!-- Card buttons will be generated here -->
     </div>
-    <div id="selectedCards">
-        <!-- Selected cards will be displayed here -->
-    </div>
+    <button id="resetButton" onclick="reset()">Reset</button>
 
     <script src="../js/cards.js"></script>
 </body>

@@ -1,0 +1,22 @@
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Make the list items display horizontally */
+}
+
+.navbar ul li {
+    margin-right: 20px; /* Adjust as needed for spacing */
+}
+
+.navbar ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar ul li a:hover {
+    background-color: #555;
+}

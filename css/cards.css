@@ -1,0 +1,28 @@
+/* Style for the reset button */
+#resetButton {
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Style for the card buttons */
+#cardButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#cardButtons button {
+    margin-right: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* Style for the card images */
+#cardButtons img {
+    width: 20vw; /* Adjust as needed for the desired size */
+    max-width: 150px; /* Optional: set a max width for smaller screens */
+}
