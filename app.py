@@ -8,7 +8,7 @@ from datetime import timedelta
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Set your secret key for session encryption
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=7)  # Set session lifetime to 7 days
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://webserver1:password@64.23.223.228/diceofdestiny'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://webserver:password@64.23.223.228/diceofdestiny'
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
