@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spinning Wheel Chance Picker</title>
+    <link rel="stylesheet" href="../css/wheel.css">
+</head>
+<body>
+    <h1>Spinning Wheel Chance Picker</h1>
+    <div class="container">
+        <div class="wheel" id="wheel-container">
+            <div class="pointer"></div>
+            <div class="options" id="wheel-options"></div>
+        </div>
+        <textarea id="options-input" placeholder="Enter options (one per line)"></textarea>
+        <button id="spin-btn" onclick="spinWheel()" disabled>Spin</button>
+    </div>
+
+    <script src="../js/wheel.js"></script>
+</body>
+</html>
